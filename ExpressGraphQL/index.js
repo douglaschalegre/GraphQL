@@ -6,6 +6,9 @@ var { buildSchema } = require('graphql');
 var schema = buildSchema(`
   type Query {
     hello: String
+    array: [String]
+    float: Float
+    int: Int
   }
 `);
 
@@ -13,6 +16,15 @@ var schema = buildSchema(`
 var root = {
   hello: () => {
     return 'Hello world!';
+  },
+  array: () => {
+      return ['this','is','a','test','!'];
+  },
+  float: () => {
+    return false;
+  },
+  int: () => {
+    return 20;
   },
 };
 
